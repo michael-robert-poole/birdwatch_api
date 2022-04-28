@@ -17,7 +17,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 #curl --location --request POST 'http://127.0.0.1:5000/users' \
 #--form 'image=@[YOUR_FILE_PATH]'
 
-@app.route('/birdwatch', methods = ['POST']) 
+@app.route('/post', methods = ['POST']) 
 def get_bird_predicitons():
     f  =request.files["image"]
     file_type=get_file_type(f.filename)
@@ -60,7 +60,7 @@ def get_file_type(filename):
 def allowed_file(filename, file_type):
     return '.' in filename and file_type in ALLOWED_EXTENSIONS
 
-@app.route('/birdwatch')
+@app.route('/')
 def welcome():
     
     return Response({"Welcome to the Birdwatch Application"}, status=200,mimetype='text')
