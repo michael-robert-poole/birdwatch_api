@@ -17,7 +17,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 #curl --location --request POST 'http://127.0.0.1:5000/users' \
 #--form 'image=@[YOUR_FILE_PATH]'
 
-@app.route('/post', methods = ['POST']) 
+@app.route('/birdwatch', methods = ['POST']) 
 def get_bird_predicitons():
     f  =request.files["image"]
     file_type=get_file_type(f.filename)
