@@ -53,7 +53,8 @@ def process_image(file_type):
     
 def get_file_type(filename):
     split_string = filename.rsplit('.', 1)
-    file_ext = if len(split_string > 0) split_string[1].lower() else "invalid_file_extension"
+    print(len(split_string))
+    file_ext = "invalid_file_extension" if len(split_string)<2 else  split_string[1].lower()
     return file_ext
 
 def allowed_file(filename, file_type):
